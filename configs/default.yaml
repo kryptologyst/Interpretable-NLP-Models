@@ -1,0 +1,48 @@
+# Model Configuration
+model:
+  model_name: "bert-base-uncased"
+  num_labels: 20
+  dropout_rate: 0.1
+  freeze_bert: false
+
+# Training Configuration
+training:
+  epochs: 3
+  batch_size: 16
+  max_length: 512
+  learning_rate: 2e-5
+  weight_decay: 0.01
+  warmup_steps: 500
+  logging_steps: 100
+  eval_steps: 500
+  save_steps: 1000
+
+# Explanation Configuration
+explanation:
+  use_shap: true
+  use_lime: true
+  use_attention: true
+  use_ig: true
+  shap_max_samples: 100
+  lime_num_features: 10
+  attention_layer: -1
+  ig_n_steps: 50
+
+# Evaluation Configuration
+evaluation:
+  n_samples: 10
+  n_visualization_samples: 5
+
+# Data Configuration
+data:
+  use_synthetic: false
+  test_size: 0.2
+  val_size: 0.1
+  random_state: 42
+
+# Output Configuration
+output:
+  save_model: true
+  generate_explanations: true
+  create_visualizations: true
+  save_metrics: true
